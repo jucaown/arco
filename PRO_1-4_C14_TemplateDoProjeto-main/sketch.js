@@ -43,11 +43,6 @@ function draw() {
   
   //arco em movimento
   bow.y = World.mouseY
-
-  redBalloon();
-  blueBalloon();
-  greenBalloon();
-  pinkBalloon();
   
    // soltar arco quando a tecla espaço for pressionada
   if (keyDown("space")) {
@@ -60,13 +55,13 @@ function draw() {
   
   if (World.frameCount % 100 == 0) {
    switch(select_balloon ){
-    case 1:red.addImage(red_balloonImage);
+    case 1:redBalloon();
     break;
-    case 2:blue.addImage(blue_balloonImage);
+    case 2:blueBalloon();
     break;
-    case 3:green.addImage(green_balloonImage);
+    case 3:greenBalloon();
     break;
-    case 4:pink.addImage(pink_balloonImage);
+    case 4:pinkBalloon();
     break;
     default:break;
   }}
