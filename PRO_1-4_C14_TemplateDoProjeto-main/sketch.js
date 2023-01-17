@@ -43,14 +43,16 @@ function setup()
 
 function draw() 
 {
-  fill("black");
-  text("score:" + score, 300,20);
-  // chão em movimento
-    scene.velocityX = -3 
 
-    if (scene.x < 0){
+  background(0);
+  
+
+  scene.velocityX = -3 
+
+  if (scene.x < 0)
+  {
       scene.x = scene.width/2;
-    }
+  }
   
   //arco em movimento
   bow.y = World.mouseY
@@ -84,25 +86,32 @@ function draw()
   if(arrow_group.isTouching(balloon_group1))
   {
     balloon_group1.destroyEach()
+    score = score + 1
   }
 
   if(arrow_group.isTouching(balloon_group2))
   {
     balloon_group2.destroyEach()
+    score = score + 2
   }
 
   if(arrow_group.isTouching(balloon_group3))
   {
     balloon_group3.destroyEach()
+    score = score + 3
   }
 
   if(arrow_group.isTouching(balloon_group4))
   {
     balloon_group4.destroyEach()
+    score = score + 4
   }
 
-  
   drawSprites();
+
+  fill("black");
+  text("score:" + score, 300,20);
+  textSize(30);
 }
 
 
